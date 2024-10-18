@@ -1,0 +1,6 @@
+FROM python:3.9-slim
+WORKDIR /home/data
+COPY IF.txt AlwaysRememberUsThisWay.txt /home/data/
+COPY scripts.py /home/data/
+RUN pip install --no-cache-dir requests  # if any dependencies are needed
+CMD ["python", "/home/data/scripts.py"]
